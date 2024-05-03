@@ -11,6 +11,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenLocal()
+    maven("https://repo.maven.apache.org/maven2/")
 }
 
 dependencies {
@@ -31,12 +32,6 @@ tasks.withType<JavaCompile> {
 
 tasks.withType<Javadoc> {
     options.encoding = "UTF-8"
-}
-
-tasks.withType<ProcessResources> {
-    filesMatching("*.yml") {
-        expand(project.properties)
-    }
 }
 
 publishing {
