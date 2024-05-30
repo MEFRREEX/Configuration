@@ -44,3 +44,43 @@ Alternative config creation
 // Config types: YAML, JSON, HOCON or DETECT if you need to create a config by file name
 Config config = ConfigType.DETECT.createOf(new File("config.json"));
 ```
+
+## 🔌 Installation
+
+If you are not using the standalone api version place the plugin of the appropriate version (for your software) in the `plugins` folder.
+
+
+### Maven
+
+Repository:
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+Dependency:
+```xml
+<dependency>
+    <groupId>com.github.MEFRREEX</groupId>
+    <artifactId>Configuration</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+Repository:
+```groovy
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+```
+Dependency:
+```groovy
+dependencies {
+    implementation 'com.github.MEFRREEX:Configuration:1.0.0'
+}
+```
