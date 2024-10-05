@@ -1,27 +1,35 @@
 # Configuration
-Library for working with configs based on Sponge Configurate
+A library for working with configuration files based on Sponge Configurate.
 
-# 🛠 Examples
+## 📖 Overview
+**Configuration** is a flexible Java library for managing various types of configuration files, such as YAML, JSON, and HOCON. This library simplifies the process of creating, modifying, and reading configuration files with a clear and intuitive API.
 
-Creating a config
+### ✨ Features
+- **Multiple Formats Support**: Easily switch between YAML, JSON, and HOCON formats.
+- **Dynamic Configuration Handling**: Set, modify, and retrieve values from configurations with a clean syntax.
+- **Auto-Detection**: Automatically detects the file format based on the extension.
+
+## 🛠 Code Examples
+
+### Creating a Configuration
 ```java
 Config config = json ? 
         new JsonConfig(new File("config.json")) :
         new YamlConfig(new File("config.yml"));
 ```
 
-Setting the values
+### Setting Values in the Config
 ```java
 // Getting the node we need and setting its value
 config.node("string").setValue("Test string");
 config.nodes("values.list").setValue(List.of(1, 2, 3));
 config.nodes("values.map").setValue(Map.of("key", "Value"));
 
-// Saving a config
+// Saving the config
 config.save();
 ```
 
-Getting the values
+### Getting Values from the Config
 ```java
 // Getting node values
 String string = config.nodes("string").asString();
@@ -39,20 +47,19 @@ if (config.nodes("non-existing-node").isNull()) {
 }
 ```
 
-Alternative config creation
+### Alternative Configuration Creation
 ```java
-// Config types: YAML, JSON, HOCON or DETECT if you need to create a config by file name
+// Config types: YAML, JSON, HOCON, or DETECT (to auto-detect format by file name)
 Config config = ConfigType.DETECT.createOf(new File("config.json"));
 ```
 
 ## 🔌 Installation
 
-If you are not using the standalone api version place the plugin of the appropriate version (for your software) in the `plugins` folder.
-
+### Plugin Setup
+If you're not using the standalone API version, place the appropriate plugin JAR in your server's `plugins` folder.
 
 ### Maven
-
-Repository:
+Add the following repository and dependency to your `pom.xml`:
 ```xml
 <repositories>
     <repository>
@@ -60,9 +67,7 @@ Repository:
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
-```
-Dependency:
-```xml
+
 <dependency>
     <groupId>com.github.MEFRREEX</groupId>
     <artifactId>Configuration</artifactId>
@@ -71,16 +76,18 @@ Dependency:
 ```
 
 ### Gradle
-Repository:
+Add the following repository and dependency to your `build.gradle`:
 ```groovy
 repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
 }
-```
-Dependency:
-```groovy
+
 dependencies {
     implementation 'com.github.MEFRREEX:Configuration:1.0.0'
 }
 ```
+
+---
+
+[Switch to Russian](README_ru.md)
