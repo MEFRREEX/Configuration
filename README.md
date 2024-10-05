@@ -55,9 +55,6 @@ Config config = ConfigType.DETECT.createOf(new File("config.json"));
 
 ## 🔌 Installation
 
-### Plugin Setup
-If you're not using the standalone API version, place the appropriate plugin JAR in your server's `plugins` folder.
-
 ### Maven
 Add the following repository and dependency to your `pom.xml`:
 ```xml
